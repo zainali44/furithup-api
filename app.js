@@ -51,7 +51,10 @@ app.get(`${api}/checkFirebaseConnection`, (req, res) => {
     res.status(500).json({ success: false, message: 'Error checking Firebase connection' });
   }
 });
-
+app.get('/', (req, res) => {
+  res.send('API is running...');
+}
+);
 // Start the server
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
