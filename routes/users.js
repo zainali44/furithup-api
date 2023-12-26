@@ -57,7 +57,7 @@ router.post('/register', async (req, res) => {
         // Create user with email and password
         const userRecord = await admin.auth().createUser({
             email,
-            password : bcrypt.hashSync(password, 10),
+            password,
             displayName,
             phoneNumber: phone,
             disabled: false,
